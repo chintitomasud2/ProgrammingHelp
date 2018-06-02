@@ -1,0 +1,11 @@
+Problems:Your target project 'LibraryManagement' doesn't match your migrations assembly 'LibraryData'. Either change your target project or change your migrations assembly.
+
+
+
+Solution: Startup file e jeye
+services.AddDbContext<LibraryDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("LibraryConnection"), b => b.MigrationsAssembly("LibraryManagement")));
+                
+   //LibraryManagement -> Name of the project   
+   
+   links:https://hahoangv.wordpress.com/2016/05/27/ef7-either-change-your-target-project-or-change-your-migrations-assembly/
